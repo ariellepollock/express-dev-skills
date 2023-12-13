@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Express-Dev-Skills</title>
 </head>
 <body>
-    <% todos.forEach(function(s) { %>
-        <li>
-          <a href="/skills/<%= s.id %>"><%= s.skill %></a>
-            - 
-          <%= s.years ? 'experienced' : 'no experience' %>
-        </li>
-      <% }); %>
+    <ul>
+        <% skills.forEach(function(s) { %>
+            <li>
+                <a href="/skills/<%= s.id %>"><%= s.skill %></a>
+                    - 
+                <%= s.years ? 'experienced' : 'no experience' %>
+            </li>
+        <% }); %>
+    </ul>
 </body>
 </html>
