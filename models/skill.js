@@ -9,3 +9,17 @@ const skills = [
     {id: 8, skill: 'Midjourney', years: 1},
     {id: 9, skill: 'InCopy', years: 1}
 ]
+
+module.exports = {
+    getAll,
+    getOne
+}
+
+function getOne(id) {
+    id = parseInt(id)
+    return skills.find(skill => skill.id === id)
+}
+
+function getAll() {
+    return skills
+}
