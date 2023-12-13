@@ -1,3 +1,8 @@
+module.exports = {
+    getAll,
+    getOne
+}
+
 const skills = [
     {id: 1, skill: 'Photoshop', years: 10},
     {id: 2, skill: 'Illustrator', years: 14},
@@ -9,11 +14,6 @@ const skills = [
     {id: 8, skill: 'Midjourney', years: 1},
     {id: 9, skill: 'InCopy', years: 1}
 ]
-
-module.exports = {
-    getAll,
-    getOne
-}
 
 function getOne(id) {
     id = parseInt(id)
