@@ -1,19 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express-Dev-Skills</title>
-</head>
-<body>
-    <ul>
-        <% skills.forEach(function(s) { %>
-            <li>
-                <a href="/skills/<%= s.id %>"><%= s.skill %></a>
-                    - 
-                <%= s.years ? 'experienced' : 'no experience' %>
-            </li>
-        <% }); %>
-    </ul>
-</body>
-</html>
+<%- include('../partials/header') %>
+
+
+
+<ul>
+  <% skills.forEach(function(s) { %>
+    <li>
+      <form
+        action="/skills/<%= s.id %>?_method=DELETE"
+        method="POST"
+        class="delete-form"
+      >
+        <button type="submit">X</button>
+      </form>
+      <a href="/skills/<%= s.id %>"><%= s.skill %></a>
+      - 
+      <%= s.learn ? 'Learned' : 'Need to learn' %>
+    </li>
+  <% }); %>
+</ul>
+<a href="/skills/new">Add Skill</a>
+
+  
+<%- include('../partials/footer') %>
